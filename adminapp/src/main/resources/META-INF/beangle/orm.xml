@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<orm>
+  <mapping class="com.yushang.website.etls.model.DefaultMapping" />
+  <naming>
+    <profile package = "com.yushang.website.etls" pluralize="true" schema="etls"/>
+  </naming>
+</orm>
