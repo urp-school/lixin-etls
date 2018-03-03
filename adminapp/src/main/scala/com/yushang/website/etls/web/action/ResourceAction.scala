@@ -1,5 +1,5 @@
 /*
- * Beangle, Agile Development Scaffold and Toolkits.
+ * OpenURP, Agile University Resource Planning Solution.
  *
  * Copyright © 2005, The OpenURP Software.
  *
@@ -33,7 +33,6 @@ import com.yushang.website.etls.Constants
 import com.yushang.website.etls.model.Attachment
 import java.io.File
 import org.beangle.webmvc.api.view.Stream
-
 
 class ResourceAction extends RestfulAction[Resource] {
 

@@ -16,7 +16,7 @@
                 </div>
                 <div class="answer_con">
                 [@listReply message.replies/]
-             
+
                     <div class="answer_initiator text-right">
                         <form action="saveReply/${message.id}">
                             <a href="javascript:;">我也说一句</a>
@@ -56,7 +56,7 @@
                         </ul>
                     </div>
                     [/#list]
-  
+
 [/#macro]
     <!-- Page Content -->
     <div class="container m_t_60 margin_t_30">
@@ -73,7 +73,7 @@
           [#else]
             [#assign start = pageIndex]
           [/#if]
-          
+
           [#if pageIndex+2 < totalPages]
             [#assign end = pageIndex+2]
           [#else]
@@ -119,8 +119,6 @@
             </div>
 
         </div>
-
-
 
     </div>
    <script>

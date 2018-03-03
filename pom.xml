@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.openurp</groupId>
     <artifactId>openurp-parent</artifactId>
-    <version>0.2.7</version>
+    <version>0.2.8</version>
   </parent>
   <groupId>net.openurp.lixin.etls</groupId>
   <artifactId>lixin-etls-parent</artifactId>

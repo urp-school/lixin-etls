@@ -38,10 +38,10 @@
                             </div>
                           </div>
                           [#if reservation.state == States.Submited]
-										        <div class="text-center">
-										              <a href="${base }/reservation/cancle/${reservation.id}"><button type="button">取消预约</button></a>
-										        </div>
-									        [/#if]
+                            <div class="text-center">
+                                  <a href="${base }/reservation/cancle/${reservation.id}"><button type="button">取消预约</button></a>
+                            </div>
+                          [/#if]
                         </form>
                     </div>
                 </div>

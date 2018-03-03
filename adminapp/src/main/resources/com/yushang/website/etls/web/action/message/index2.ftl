@@ -15,7 +15,7 @@
                     <a href="javascript:;">回复</a>
                 </div>
                 <div class="answer_con">
-                
+
                 [#if message.replies ??]
                   [#list message.replies as reply]
                   <div class="answer_list">
@@ -76,7 +76,7 @@
                 </div>
             </div>
             [/#list]
-  
+
 [/#macro]
     <!-- Page Content -->
     <div class="container m_t_60 margin_t_30">
@@ -124,8 +124,6 @@
             </div>
 
         </div>
-
-
 
     </div>
    <script>

@@ -164,8 +164,6 @@
 
         </div>
 
-
-
     </div>
    <script>
     $(".question_answer > a").click(function(){

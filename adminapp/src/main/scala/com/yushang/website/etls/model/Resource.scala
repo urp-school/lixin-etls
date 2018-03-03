@@ -1,5 +1,5 @@
 /*
- * Beangle, Agile Development Scaffold and Toolkits.
+ * OpenURP, Agile University Resource Planning Solution.
  *
  * Copyright © 2005, The OpenURP Software.
  *
@@ -35,6 +35,5 @@ class Resource extends LongId with Named with Updated{
   var attachment: Option[Attachment] = None
 
   var resourceType: ResourceType = _
-
 
 }

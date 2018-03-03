@@ -1,5 +1,5 @@
 /*
- * Beangle, Agile Development Scaffold and Toolkits.
+ * OpenURP, Agile University Resource Planning Solution.
  *
  * Copyright © 2005, The OpenURP Software.
  *
