@@ -32,6 +32,8 @@ class Resource extends LongId with Named with Updated{
 
   var detail: Option[String] = None
 
+  var text: Option[String] = None
+
   var attachment: Option[Attachment] = None
 
   var resourceType: ResourceType = _

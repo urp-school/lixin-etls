@@ -41,7 +41,7 @@ class ResourceAction extends RestfulAction[Resource] {
     put("resourceType", entityDao.get(classOf[ResourceType], id.toInt))
     val builder = OqlBuilder.from(classOf[Resource], "resource")
     builder.where("resource.resourceType.id=:id", id.toInt)
-    builder.orderBy("resource.updatedAt desc").limit(1, 8)
+    builder.orderBy("resource.updatedAt desc").limit(getPageLimit)
     put("resources", entityDao.search(builder))
     indexSetting()
     forward()

@@ -32,7 +32,8 @@ class DefaultMapping extends MappingModule {
 
     bind[ResourceType]
 
-    bind[Resource]
+    bind[Resource].on(e=>declare(
+        e.detail is length(65535)))
 
     bind[Attachment]
 

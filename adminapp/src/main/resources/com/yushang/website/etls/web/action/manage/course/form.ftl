@@ -6,7 +6,7 @@
   [@b.form action=sa theme="list" enctype="multipart/form-data"]
     [@b.textfield name="course.name" label="名称" value="${course.name!}" required="true" maxlength="20"/]
     [@b.textfield name="course.tel" label="联系电话" value="${course.tel!}" maxlength="100"/]
-    [@b.textarea name="course.classroom" label="教室分布" value="${course.classroom!}" maxlength="1000"/]
+    [@b.textarea name="course.classroom" label="教室分布" value="${course.classroom!}" maxlength="1000" cols="50"/]
     [@b.textarea name="course.description" label="详细介绍" value="${course.description!}" maxlength="10000" rows="5" cols="50"/]
     [@b.field label="显示图片" ]
       <td>

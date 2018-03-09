@@ -48,7 +48,6 @@ class ResourceAction extends RestfulAction[Resource] {
   }
 
   override def saveAndRedirect(resource: Resource): View = {
-
     val base = Constants.AttachmentBase
     val aParts = Params.getAll("attachment").asInstanceOf[List[Part]]
     aParts foreach { part =>

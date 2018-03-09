@@ -18,10 +18,7 @@
                         <a href="${base }/resource/${resource.id }">
                             <h4 class="media-heading m_t_10">${resource.name}</h4>
                             <p>
-                              [#if resource.detail?length gt 60]
-                                ${(resource.detail)?substring(0,58)}……
-                              [#else] ${resource.detail}
-                              [/#if]
+                                ${resource.text!}
                             </p>
                         </a>
                       </div>
@@ -31,7 +28,42 @@
             </div>
         </div>
 
-      <div class="see_more"><a href="${base }/resource/all/${resourceType.id}" target="_blank">查看更多</a></div>
+      [#assign pageIndex = resources.pageIndex]
+      [#assign totalPages = resources.totalPages]
+      [#if pageIndex-2>0]
+        [#assign start = pageIndex-2]
+      [#else]
+        [#assign start = pageIndex]
+      [/#if]
+
+      [#if pageIndex+2 < totalPages]
+        [#assign end = pageIndex+2]
+      [#else]
+        [#assign end = totalPages]
+      [/#if]
+      <div class="text-right">
+          <nav aria-label="Page navigation">
+              <ul class="pagination">
+               [#if pageIndex>1]
+                <li>
+                  <a href="${base}/resource/resource/${resourceType.id}?pageIndex=${pageIndex-1}&pageSize=8" aria-label="Previous">
+                    <span aria-hidden="true">«</span>
+                  </a>
+                </li>
+                [/#if]
+                [#list start..end as i]
+                <li><a href="${base}/resource/resource/${resourceType.id}?pageIndex=${i}&pageSize=8">${i}</a></li>
+                [/#list]
+                [#if pageIndex!=totalPages]
+                <li>
+                  <a href="${base}/resource/resource/${resourceType.id}?pageIndex=${pageIndex+1}&pageSize=8" aria-label="Next">
+                    <span aria-hidden="true">»</span>
+                  </a>
+                </li>
+                [/#if]
+              </ul>
+            </nav>
+       </div>
 
     </div>
 

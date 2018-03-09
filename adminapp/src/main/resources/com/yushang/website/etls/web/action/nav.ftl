@@ -50,7 +50,7 @@
                         <ul class="dropdown-menu">
                             [#list resourceTypes as resourceType]
                               <li>
-                                  <a href="${base }/resource/resource/${resourceType.id} ">${resourceType.name}</a>
+                                  <a href="${base }/resource/resource/${resourceType.id}?pageSize=8 ">${resourceType.name}</a>
                               </li>
                             [/#list]
                         </ul>
