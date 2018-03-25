@@ -35,4 +35,6 @@ class Message extends LongId with Updated {
 
   var anonymous: Boolean = true
 
+  var visiable: Boolean = true
+
 }

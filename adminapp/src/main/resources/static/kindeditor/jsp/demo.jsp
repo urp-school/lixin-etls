@@ -10,7 +10,7 @@ String htmlData = request.getParameter("content1") != null ? request.getParamete
   <title>KindEditor JSP</title>
   <link rel="stylesheet" href="../themes/default/default.css" />
   <link rel="stylesheet" href="../plugins/code/prettify.css" />
-  <script charset="utf-8" src="../kindeditor.js"></script>
+  <script charset="utf-8" src="../kindeditor-all.js"></script>
   <script charset="utf-8" src="../lang/zh-CN.js"></script>
   <script charset="utf-8" src="../plugins/code/prettify.js"></script>
   <script>

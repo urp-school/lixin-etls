@@ -34,6 +34,7 @@ import java.io.FileOutputStream
 import org.beangle.commons.lang.Strings
 import org.beangle.commons.codec.digest.Digests
 import org.beangle.commons.io.IOs
+import org.beangle.data.dao.OqlBuilder
 
 class ResourceAction extends RestfulAction[Resource] {
 
@@ -52,7 +53,6 @@ class ResourceAction extends RestfulAction[Resource] {
     val aParts = Params.getAll("attachment").asInstanceOf[List[Part]]
     aParts foreach { part =>
       if (part.getSize.toInt > 0) {
-        resource.attachment.foreach(e=> entityDao.remove(e))
         val attachment = new Attachment()
         attachment.fileSize = part.getSize.toInt
         val ext = Strings.substringAfterLast(part.getSubmittedFileName, ".")
@@ -60,8 +60,8 @@ class ResourceAction extends RestfulAction[Resource] {
         attachment.name = part.getSubmittedFileName
         attachment.updatedAt = Instant.now()
         IOs.copy(part.getInputStream, new FileOutputStream(base + attachment.path))
-        entityDao.saveOrUpdate(attachment);
-        resource.attachment = Some(attachment)
+        entityDao.saveOrUpdate(attachment)
+        resource.attachments += attachment
       }
     }
 
@@ -73,6 +73,23 @@ class ResourceAction extends RestfulAction[Resource] {
     val attach = entityDao.get(classOf[Attachment], attachmentId);
     val base = Constants.AttachmentBase
     Stream(new File(base + attach.path), attach.name)
+  }
+
+  def deleteAttach(): View = {
+    val base = Constants.AttachmentBase
+    val resourceId = get("resourceId").orNull
+    get("attachmentId").foreach { attachmentId =>
+      val attachment = entityDao.get(classOf[Attachment], attachmentId.toLong)
+      entityDao.remove(attachment)
+      get("resourceId").foreach { resourceId =>
+        val resource = entityDao.get(classOf[Resource], resourceId.toLong)
+        resource.attachments -= attachment
+        entityDao.saveOrUpdate(resource)
+      }
+      val file = new File(base + attachment.path)
+      file.delete()
+    }
+    redirect("info", s"&id=${resourceId}", "info.save.success")
   }
 
 }

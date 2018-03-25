@@ -21,9 +21,9 @@ package com.yushang.website.etls.model
 object States extends Enumeration {
   class State(name: String) extends super.Val(name)
 
-  val Submited = new State("已提交")
+  val Submited = new State("提交成功")
 
-  val Accepted = new State("审核通过")
-  val UnAccepted = new State("审核不通过")
+  val Accepted = new State("预约通过")
+  val UnAccepted = new State("预约不通过")
 
 }

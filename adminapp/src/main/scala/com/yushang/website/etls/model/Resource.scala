@@ -28,13 +28,13 @@ import scala.collection.mutable.Buffer
 /*
  * 培训资源
  */
-class Resource extends LongId with Named with Updated{
+class Resource extends LongId with Named with Updated {
 
   var detail: Option[String] = None
 
   var text: Option[String] = None
 
-  var attachment: Option[Attachment] = None
+  var attachments: Buffer[Attachment] = Collections.newBuffer[Attachment]
 
   var resourceType: ResourceType = _
 

@@ -17,7 +17,9 @@
     [@b.field label="申请表" ]
       <td>
         <input name="attachment" type="file" />
-        [#if course.attachment??]<a href="${b.url("!attachment?attachmentId="+course.attachment.id)}">${course.attachment.name}</a>[/#if]
+        [#if course.attachment??]
+          <a href="${b.url("!attachment?attachmentId="+course.attachment.id)}">${course.attachment.name}</a>
+        [/#if]
       </td>
     [/@]
     [@b.textfield name="course.href" label="外部地址" value="${course.href!}" maxlength="200"/]

@@ -16,12 +16,18 @@
                           <div class="form-group">
                             <label class="col-sm-4 control-label">请选择培训主题:</label>
                             <div class="col-sm-8">
-                               <select name="reservation.theme.id" class="form-control">
+                               <select name="reservation.theme.id" class="form-control" onchange="onSelect(this.value)">
                                  <option value="">...</option>
                                  [#list themes as theme]
                                    <option value="${theme.id}">${theme.name}</option>
                                  [/#list]
                                </select>
+                            </div>
+                          </div>
+                          <div class="form-group" id="customThemeDiv" style="display:none">
+                            <label for="xuehao" class="col-sm-4 control-label"></label>
+                            <div class="col-sm-8">
+                              <textarea style="width:500px;height:100px;" placeholder="自定义主题" type="text" class="form-control" id="customTheme" name="reservation.customTheme" value="${ reservation.customTheme!}"></textarea>
                             </div>
                           </div>
                           <div class="form-group">
@@ -38,25 +44,25 @@
                           <div class="form-group">
                             <label for="xuehao" class="col-sm-4 control-label">您的工号或学号:</label>
                             <div class="col-sm-8">
-                              <input type="text" class="form-control" id="code" name="code">
+                              <input type="text" class="form-control" id="code" name="reservation.code" value="${reservation.code! }">
                             </div>
                           </div>
                           <div class="form-group">
                             <label for="xingming" class="col-sm-4 control-label">您的姓名:</label>
                             <div class="col-sm-8">
-                              <input type="text" class="form-control" id="name" name="name">
+                              <input type="text" class="form-control" id="name" name="reservation.name" value="${reservation.name! }">
                             </div>
                           </div>
                           <div class="form-group">
                             <label for="bumen" class="col-sm-4 control-label">您的学院或部门:</label>
                             <div class="col-sm-8">
-                              <input type="text" class="form-control" id="department" name="department">
+                              <input type="text" class="form-control" id="department" name="reservation.department" value="${reservation.department! }">
                             </div>
                           </div>
                           <div class="form-group">
                             <label for="dainhua" class="col-sm-4 control-label">您的联系方式:</label>
                             <div class="col-sm-8">
-                              <input type="text" id="tel" class="form-control" name="tel">
+                              <input type="text" id="tel" class="form-control" name="reservation.tel" value="${reservation.tel! }">
                             </div>
                           </div>
                           <div class="text-center col-sm-8 col-sm-push-4">
@@ -83,6 +89,15 @@
     </div>
     <script>
       document.reservationForm.className="form-horizontal";
+
+      function onSelect(obj){
+    		  if(obj!="4"){
+    			  $("#customThemeDiv").css("display", "none");
+    			  $("#customTheme").val("");
+    		  } else {
+    			  $("#customThemeDiv").css("display", "block");
+    		  }
+      } 
     </script>
 
 [#include "../foot.ftl"/]

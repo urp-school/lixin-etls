@@ -1,0 +1,18 @@
+[#ftl]
+[@b.head/]
+[@b.toolbar title="留言板消息"/]
+[@b.grid items=messages var="message"]
+  [@b.gridbar]
+    [#if messages?exists && messages?size > 0]
+      bar.addItem("消息可见", action.multi('visiable'));
+      bar.addItem("消息隐藏",action.multi('disable'),"edit-delete.png");
+    [/#if]
+  [/@]
+  [@b.row]
+    [@b.boxcol /]
+    [@b.col width="60%" property="detail" title="内容"/]
+    [@b.col width="15%" property="updatedAt" title="发布时间"]${message.updatedAt?string("yyyy-MM-dd")}[/@]
+    [@b.col width="15%" property="visiable" title="是否可见"]${message.visiable?string(b.text('消息可见'),b.text('消息隐藏'))}[/@]
+    [/@]
+  [/@]
+[@b.foot/]

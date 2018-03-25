@@ -34,6 +34,8 @@ import org.beangle.data.dao.OqlBuilder
 import java.time.LocalDate
 import com.yushang.website.etls.model.States
 import org.beangle.webmvc.api.annotation.mapping
+import org.mockito.internal.matchers.Null
+
 
 class ReservationAction extends RestfulAction[Reservation] {
 
@@ -66,10 +68,6 @@ class ReservationAction extends RestfulAction[Reservation] {
   override def saveAndRedirect(reservation: Reservation): View = {
     try {
       reservation.updatedAt = Instant.now
-      get("code") foreach { code => reservation.code = code }
-      get("name") foreach { name => reservation.name = name }
-      get("department") foreach { department => reservation.department = department }
-      get("tel") foreach { tel => reservation.tel = tel }
       saveOrUpdate(reservation)
       redirect("info", s"&id=${reservation.id}", "info.save.success")
     } catch {

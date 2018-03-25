@@ -4,8 +4,8 @@
 [@b.grid items=reservations var="reservation"]
   [@b.gridbar]
     [#if reservations?exists && reservations?size > 0]
-      bar.addItem("审核通过", action.multi('approve'));
-      bar.addItem("审核不通过",action.multi('disapprove'),"edit-delete.png");
+      bar.addItem("预约通过", action.multi('approve'));
+      bar.addItem("预约不通过",action.multi('disapprove'),"edit-delete.png");
     [/#if]
   [/@]
   [@b.row]
@@ -16,7 +16,7 @@
     [@b.col width="15%" property="name" title="姓名"/]
     [@b.col width="15%" property="department" title="学院或部门"/]
     [@b.col width="15%" property="tel" title="联系方式"/]
-    [@b.col width="15%" property="state" title="审核状态"]${(reservation.state)}[/@]
+    [@b.col width="15%" property="state" title="预约状态"]${(reservation.state)}[/@]
     [/@]
   [/@]
 [@b.foot/]

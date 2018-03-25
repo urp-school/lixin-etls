@@ -13,8 +13,10 @@
               <h4><i class="glyphicon glyphicon-link" aria-hidden="true"></i>附件下载</h4>
                 <div class="download_list">
                   <ul class="list-unstyled">
-                    [#if resource.attachment??]
-                        <li><a href="${base }/manage/resource/attachment/${resource.attachment.id }">${resource.attachment.name}</a></li>
+                    [#if resource.attachments??]
+                      [#list resource.attachments as attachment]
+                        <li><a href="${base }/manage/resource/attachment/${attachment.id }">${attachment.name}</a></li>
+                      [/#list]
                     [/#if]
                   </ul>
                 </div>

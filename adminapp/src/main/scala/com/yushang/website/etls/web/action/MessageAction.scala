@@ -31,10 +31,13 @@ import org.beangle.data.dao.OqlBuilder
 import org.beangle.webmvc.api.annotation.mapping
 import org.beangle.webmvc.api.annotation.param
 import java.time.Instant
+import com.yushang.website.etls.model.MessageSwitch
 
 class MessageAction extends RestfulAction[Message] {
 
   override def indexSetting(): Unit = {
+    val switch = entityDao.getAll(classOf[MessageSwitch]).head
+    put("switch", switch)
     val builder = OqlBuilder.from(classOf[Message], "message")
     builder.where("message.subject is null")
     builder.limit(getPageLimit)

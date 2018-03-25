@@ -24,9 +24,10 @@ class DefaultModule extends BindModule {
 
   protected override def binding() {
     bind(classOf[CourseAction])
-    bind(classOf[ThemeAction],classOf[TimeAction])
-    bind(classOf[TypeAction],classOf[ResourceAction])
+    bind(classOf[ThemeAction], classOf[TimeAction])
+    bind(classOf[TypeAction], classOf[ResourceAction])
     bind(classOf[ReservationAction])
     bind(classOf[MenuAction])
+    bind(classOf[MessageSwitchAction],classOf[MessageAction])
   }
 }

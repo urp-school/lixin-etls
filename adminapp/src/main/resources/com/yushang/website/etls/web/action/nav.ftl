@@ -65,7 +65,7 @@
                       <span>/</span>
                     </li>
                     <li>
-                        <a href="${base }/index/contact">联系我们</a>
+                        <a href="${base }/contact">联系我们</a>
                     </li>
                 </ul>
             </div>

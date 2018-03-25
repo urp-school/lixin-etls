@@ -37,6 +37,7 @@ import org.beangle.webmvc.api.view.Stream
 import org.beangle.webmvc.api.annotation.mapping
 import java.io.File
 import com.yushang.website.etls.Constants
+import org.beangle.data.dao.OqlBuilder
 
 class CourseAction extends RestfulAction[Course] {
 
@@ -46,7 +47,11 @@ class CourseAction extends RestfulAction[Course] {
     val aParts = Params.getAll("attachment").asInstanceOf[List[Part]]
     aParts foreach { part =>
       if (part.getSize.toInt > 0) {
-        course.attachment.foreach(e=> entityDao.remove(e))
+        course.attachment.foreach { attachment =>
+          entityDao.remove(attachment)
+          val file = new File(base + attachment.path)
+          file.delete()
+        }
         val attachment = new Attachment()
         attachment.fileSize = part.getSize.toInt
         val ext = Strings.substringAfterLast(part.getSubmittedFileName, ".")
@@ -62,7 +67,7 @@ class CourseAction extends RestfulAction[Course] {
     val pParts = Params.getAll("picture").asInstanceOf[List[Part]]
     pParts foreach { part =>
       if (part.getSize.toInt > 0) {
-        course.picture.foreach(e=> entityDao.remove(e))
+        course.picture.foreach(e => entityDao.remove(e))
         val picture = new Attachment()
         picture.fileSize = part.getSize.toInt
         val ext = Strings.substringAfterLast(part.getSubmittedFileName, ".")

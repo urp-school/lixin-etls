@@ -23,8 +23,11 @@
   <tr>
     <td class="title" width="20%">附件</td>
     <td class="content" >
-        [#if resource.attachment??]
-            <a href="${b.url("!attachment?attachmentId="+resource.attachment.id)}" style="margin-left:auto">${resource.attachment.name!}</a>
+        [#if resource.attachments??]
+          [#list resource.attachments as attachment]
+            <a href="${b.url("!attachment?attachmentId="+attachment.id)}" style="margin-left:auto">${attachment.name!}</a>
+            <a href="${base}/manage/resource/deleteAttach?attachmentId=${attachment.id}&resourceId=${resource.id}">删除</a>[#if attachment_has_next]<br>[/#if]
+          [/#list]
         [/#if]
     </td>
   </tr>
