@@ -40,9 +40,9 @@
                     <div>
                         <strong>${(reply.name)!"匿名"}：<span>回复${(reply.subject.name)!"匿名"}：</span></strong>
                         <span>
-							            [#if reply.visiable]${reply.detail }
-							            [#else] <I>*该消息已被管理员屏蔽&nbsp*</I>
-							            [/#if]
+                          [#if reply.visiable]${reply.detail }
+                          [#else] <I>*该消息已被管理员屏蔽&nbsp*</I>
+                          [/#if]
                         </span>
                     </div>
                     <div class="comment_ans text-right m_t_10 m_b_5">
@@ -124,10 +124,10 @@
 
         </div>
 
-	[#else]<div class="message_prompt">留言板功能未开放</div> 
+  [#else]<div class="message_prompt">留言板功能未开放</div>
   [/#if]
 </div>
-    
+
    <script>
     $(".question_answer > a").click(function(){
       $(this).parents(".maessage_artical").children(".answer_con").toggle();

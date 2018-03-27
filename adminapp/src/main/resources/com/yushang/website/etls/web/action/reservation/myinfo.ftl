@@ -24,13 +24,13 @@
                             </div>
                           </div>
                           [#if reservation.theme.id == 4]
-	                          <div class="form-group">
-	                            <label for="xuehao" class="col-sm-4 control-label"></label>
-	                            <div class="col-sm-8">
-	                              <input  type="text" class="form-control" id="customTheme" disabled="disabled" value="${reservation.customTheme!}">
-	                            </div>
-	                          </div>
-	                        [/#if]
+                            <div class="form-group">
+                              <label for="xuehao" class="col-sm-4 control-label"></label>
+                              <div class="col-sm-8">
+                                <input  type="text" class="form-control" id="customTheme" disabled="disabled" value="${reservation.customTheme!}">
+                              </div>
+                            </div>
+                          [/#if]
                           <div class="form-group">
                             <label  class="col-sm-4 control-label">时间:</label>
                             <div class="col-sm-8">
@@ -45,7 +45,7 @@
                               <input type="text" class="form-control" id="code" disabled="disabled" value="${reservation.state}">
                             </div>
                           </div>
-                          [#if reservation.state == States.Submited && reservation.state == States.UnAccepted]
+                          [#if reservation.state == States.Submited || reservation.state == States.UnAccepted]
                             <div class="text-center">
                                   <a href="${base }/reservation/cancle/${reservation.id}"><button type="button">取消预约</button></a>
                             </div>

@@ -91,13 +91,13 @@
       document.reservationForm.className="form-horizontal";
 
       function onSelect(obj){
-    		  if(obj!="4"){
-    			  $("#customThemeDiv").css("display", "none");
-    			  $("#customTheme").val("");
-    		  } else {
-    			  $("#customThemeDiv").css("display", "block");
-    		  }
-      } 
+          if(obj!="4"){
+            $("#customThemeDiv").css("display", "none");
+            $("#customTheme").val("");
+          } else {
+            $("#customThemeDiv").css("display", "block");
+          }
+      }
     </script>
 
 [#include "../foot.ftl"/]

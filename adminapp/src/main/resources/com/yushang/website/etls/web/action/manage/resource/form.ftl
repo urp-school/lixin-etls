@@ -14,7 +14,7 @@
         <input name="attachment" type="file" />
         [#if resource.attachments??]
           [#list resource.attachments as attachment]
-	            <a href="${b.url("!attachment?attachmentId="+attachment.id)}">${(attachment.name)!}</a>[#if attachment_has_next]；[/#if]
+              <a href="${b.url("!attachment?attachmentId="+attachment.id)}">${(attachment.name)!}</a>[#if attachment_has_next]；[/#if]
           [/#list]
         [/#if]
       </td>
@@ -27,7 +27,6 @@
 
   <link rel="stylesheet" href="${base}/static/kindeditor/themes/default/default.css"></link>
   <script charset="utf-8" src="${base}/static/kindeditor/kindeditor-all-min.js"></script>
-  <script charset="utf-8" src="${base}/static/kindeditor/lang/zh_CN"></script>
   <script>
      KindEditor.remove('#editor_id');
      var edit_id=KindEditor.create('#editor_id', {
