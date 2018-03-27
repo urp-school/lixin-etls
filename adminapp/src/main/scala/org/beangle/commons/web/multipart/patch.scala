@@ -49,7 +49,7 @@ object StandardMultipartResolver extends MultipartResolver {
         if (disposition.contains("filename=")) {
           val newParts = params.get(part.getName) match {
             case Some(arr) => Array.concat(Array(part), arr.asInstanceOf[Array[Part]])
-            case None      => Array(part)
+            case None => Array(part)
           }
           params.put(part.getName, newParts)
         } else {
@@ -59,7 +59,7 @@ object StandardMultipartResolver extends MultipartResolver {
           val str = new String(b.toByteArray)
           params.put(paramName, str)
         }
-      } 
+      }
     }
     params.toMap
   }

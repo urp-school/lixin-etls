@@ -29,5 +29,6 @@ class DefaultModule extends BindModule {
     bind(classOf[ReservationAction])
     bind(classOf[MenuAction])
     bind(classOf[MessageSwitchAction],classOf[MessageAction])
+    bind(classOf[UploadJsonAction])
   }
 }

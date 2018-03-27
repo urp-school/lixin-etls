@@ -31,9 +31,18 @@
   <script>
      KindEditor.remove('#editor_id');
      var edit_id=KindEditor.create('#editor_id', {
-         uploadJson : "${base}/web/action/manage/UploadJson.Action",
-         fileManagerJson : "${base}/web/action/manage/FileManagerJson.Action",
-         allowFileManager : true,
+         uploadJson : "${base}/manage/upload-json/upload",
+         allowFileManager : false,
+         items:[
+             'undo', 'redo', '|', 'preview','cut', 'copy', 'paste',
+             'plainpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
+             'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
+             'superscript', 'quickformat', 'selectall', '|', 'fullscreen', '/',
+             'formatblock', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+             'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image',
+             'table', 'hr', 'emoticons', 'pagebreak',
+             'link', 'unlink', '|', 'about'
+         ],
         afterBlur: function(){this.sync();}
      });
      edit_id.focus();

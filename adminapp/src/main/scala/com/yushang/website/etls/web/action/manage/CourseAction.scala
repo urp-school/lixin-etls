@@ -43,7 +43,7 @@ class CourseAction extends RestfulAction[Course] {
 
   override def saveAndRedirect(course: Course): View = {
 
-    val base = Constants.AttachmentBase
+    val base = Constants.AttachmentBase + "course/"
     val aParts = Params.getAll("attachment").asInstanceOf[List[Part]]
     aParts foreach { part =>
       if (part.getSize.toInt > 0) {
@@ -86,7 +86,7 @@ class CourseAction extends RestfulAction[Course] {
   @mapping("attachment/{attachmentId}")
   def attachment(attachmentId: Long): View = {
     val attach = entityDao.get(classOf[Attachment], attachmentId);
-    val base = Constants.AttachmentBase
+    val base = Constants.AttachmentBase + "course/"
     Stream(new File(base + attach.path), attach.name)
   }
 

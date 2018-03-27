@@ -38,7 +38,7 @@
             <ul class="list-unstyled">
                 <li>
                     <div>
-                        <strong>${(reply.name)!"匿名"}：<span>回复${(reply.subject.name)!"匿名"}：${(reply.subject.id)!"匿名"}</span></strong>
+                        <strong>${(reply.name)!"匿名"}：<span>回复${(reply.subject.name)!"匿名"}：</span></strong>
                         <span>
 							            [#if reply.visiable]${reply.detail }
 							            [#else] <I>*该消息已被管理员屏蔽&nbsp*</I>
