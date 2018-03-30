@@ -15,14 +15,14 @@
           <span>${(message.name)!"匿名"}</span>
             <span>${message.updatedAt }</span>
             <a href="javascript:;">我说一句</a>
-	          <div class="answer_initiator text-right">
-	              <form action="${b.url('!saveReply?id='+message.id)}">
-	                  <div class="publish_con">
-	                      <textarea placeholder="回复${(message.name)!"匿名"}：" name="reply.detail${message.id}"></textarea>
-	                      <button class="btn btn-default" type="submit">发表</button>
-	                  </div>
-	              </form>
-	          </div>
+            <div class="answer_initiator text-right">
+                <form action="${b.url('!saveReply?id='+message.id)}">
+                    <div class="publish_con">
+                        <textarea placeholder="回复${(message.name)!"匿名"}：" name="reply.detail${message.id}"></textarea>
+                        <button class="btn btn-default" type="submit">发表</button>
+                    </div>
+                </form>
+            </div>
         </div>
         <div class="answer_con">
           [@listReply message.replies/]
