@@ -24,11 +24,10 @@ import com.yushang.website.etls.web.action.ResourceAction
 import com.yushang.website.etls.web.action.ReservationAction
 import com.yushang.website.etls.web.action.MessageAction
 import com.yushang.website.etls.web.action.ManageAction
-import com.yushang.website.etls.web.action.ContactAction
 
 class DefaultModule extends BindModule {
 
   protected override def binding() {
-    bind(classOf[IndexAction],classOf[ReservationAction],classOf[ResourceAction],classOf[MessageAction],classOf[ManageAction],classOf[ContactAction])
+    bind(classOf[IndexAction],classOf[ReservationAction],classOf[ResourceAction],classOf[MessageAction],classOf[ManageAction])
   }
 }

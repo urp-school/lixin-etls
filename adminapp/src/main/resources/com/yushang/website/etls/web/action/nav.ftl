@@ -1,6 +1,5 @@
   <div class="container top_h">
-      <div class="row"><div class="col-xs-12 text-right"><a href="http://www.sfu.edu.cn" target="_blank">学校主页</a><span class="f_main_color m_lr_5"> | </span><a href="${base}/manage/search" target="_blank">管理系统</a></div></div>
-      <div class="row p_b_35">
+        <div class="row p_b_35">
             <div class="col-sm-6"><img class="logo" src="${base}/static/images/logo.png"></div>
             <div class="col-sm-6">
               <div class="row">
@@ -60,12 +59,6 @@
                     </li>
                     <li>
                         <a href="${base }/message?pageSize=5">留言板</a>
-                    </li>
-                    <li class="hidden-xs">
-                      <span>/</span>
-                    </li>
-                    <li>
-                        <a href="${base }/contact">联系我们</a>
                     </li>
                 </ul>
             </div>

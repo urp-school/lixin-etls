@@ -16,7 +16,7 @@
                           <div class="form-group">
                             <label class="col-sm-4 control-label">请选择培训主题:</label>
                             <div class="col-sm-8">
-                               <select name="reservation.theme.id" class="form-control" onchange="onSelect(this.value)">
+                               <select name="reservation.theme.id" class="form-control">
                                  <option value="">...</option>
                                  [#list themes as theme]
                                    <option value="${theme.id}">${theme.name}</option>
@@ -24,10 +24,10 @@
                                </select>
                             </div>
                           </div>
-                          <div class="form-group" id="customThemeDiv" style="display:none">
-                            <label for="xuehao" class="col-sm-4 control-label"></label>
+                          <div class="form-group" id="customThemeDiv" >
+                            <label for="detail" class="col-sm-4 control-label">请填写培训内容:</label>
                             <div class="col-sm-8">
-                              <textarea style="width:500px;height:100px;" placeholder="自定义主题" type="text" class="form-control" id="customTheme" name="reservation.customTheme" value="${ reservation.customTheme!}"></textarea>
+                              <textarea style="width:500px;height:100px;" type="text" class="form-control" id="customTheme" name="reservation.detail" value="${ reservation.detail!}"></textarea>
                             </div>
                           </div>
                           <div class="form-group">
@@ -90,14 +90,14 @@
     <script>
       document.reservationForm.className="form-horizontal";
 
-      function onSelect(obj){
+      /*function onSelect(obj){
           if(obj!="4"){
             $("#customThemeDiv").css("display", "none");
             $("#customTheme").val("");
           } else {
             $("#customThemeDiv").css("display", "block");
           }
-      }
+      }*/
     </script>
 
 [#include "../foot.ftl"/]

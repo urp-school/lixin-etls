@@ -7,15 +7,15 @@
             <div class="articalt_text">
               <h4>智慧教室介绍</h4>
                 <p>
-                  ${course.description}
+                  ${course.description!}
                 </p>
               <h4>教室分布</h4>
                 <p>
-                  ${course.classroom }
+                  ${course.classroom! }
                 </p>
                <h4>联系电话</h4>
                  <p>
-                   ${course.tel}
+                   ${course.tel!}
                  </p>
             </div>
             <div class="attachment_download">

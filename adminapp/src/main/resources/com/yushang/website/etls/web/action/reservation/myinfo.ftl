@@ -23,14 +23,12 @@
                                 </select>
                             </div>
                           </div>
-                          [#if reservation.theme.id == 4]
-                            <div class="form-group">
-                              <label for="xuehao" class="col-sm-4 control-label"></label>
-                              <div class="col-sm-8">
-                                <input  type="text" class="form-control" id="customTheme" disabled="disabled" value="${reservation.customTheme!}">
-                              </div>
+                          <div class="form-group">
+                            <label for="detail" class="col-sm-4 control-label">培训内容:</label>
+                            <div class="col-sm-8">
+                              <textarea  style="width:500px;height:100px;" type="text" class="form-control" id="detail" disabled="disabled">${reservation.detail}</textarea>
                             </div>
-                          [/#if]
+                          </div>
                           <div class="form-group">
                             <label  class="col-sm-4 control-label">时间:</label>
                             <div class="col-sm-8">

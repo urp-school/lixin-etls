@@ -25,7 +25,7 @@ class Reservation extends LongId with Updated {
 
   var theme: ReservationTheme = _
 
-  var customTheme: Option[String] = _
+  var detail: String = _
 
   var time: ReservationTime = _
 

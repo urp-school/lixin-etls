@@ -354,7 +354,7 @@ footer a {
   -webkit-border-radius: 5px;
 }
 .maessage_louzhu {
-  min-height: 260px;
+  min-height: 100px;
 }
 .maessage_louzhu .question_sign {
   color: #1296db;
@@ -376,8 +376,6 @@ footer a {
   background: #f2f3f6;
 }
 .answer_con {
-  min-height: 200px;
-  display: none;
   padding: 35px 30px 30px;
   border-radius: 3px;
   -ms-border-radius: 3px;
@@ -571,7 +569,7 @@ footer a {
   margin-bottom: 70px;
 }
 .aboutus_info {
-  font-size: 18px;
+  font-size: 15px;
   color: #666;
   line-height: 50px;
   margin-top: 25px;

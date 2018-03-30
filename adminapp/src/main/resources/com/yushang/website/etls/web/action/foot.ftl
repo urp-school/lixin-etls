@@ -1,6 +1,6 @@
     <div class="friendlink">
       <div class="container">
-          <div class="friendlink_con"><span>相关链接：</span><a href="http://www.sfu.edu.cn" target="_blank">上海立信会计金融学院</a>|<a href="http://jyzx.lixin.edu.cn/"  target="_blank">现代教育技术与服务中心</a>|<a href="http://jwc.lixin.edu.cn" target="_blank">教务处</a></div>
+          <div class="friendlink_con"><span>相关链接：</span><a href="http://jyzx.lixin.edu.cn/"  target="_blank">现代教育技术与服务中心</a>|<a href="http://jwc.lixin.edu.cn" target="_blank">教务系统</a>|<a href="http://coursecenter.lixin.edu.cn" target="_blank">课程中心</a></div>
         </div>
     </div>
     <footer>

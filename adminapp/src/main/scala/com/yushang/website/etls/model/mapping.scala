@@ -28,13 +28,13 @@ class DefaultMapping extends MappingModule {
   def binding(): Unit = {
     defaultIdGenerator("auto_increment")
 
-    bind[Course].on(e=>declare(
-        e.description is length(65535)))
+    bind[Course].on(e => declare(
+      e.description is length(65535)))
 
     bind[ResourceType]
 
-    bind[Resource].on(e=>declare(
-        e.detail is length(65535)))
+    bind[Resource].on(e => declare(
+      e.detail is length(65535)))
 
     bind[Attachment]
 
@@ -42,7 +42,8 @@ class DefaultMapping extends MappingModule {
 
     bind[ReservationTime]
 
-    bind[Reservation]
+    bind[Reservation].on(e => declare(
+      e.detail is length(65535)))
 
     bind[Message].on(e => declare(
       e.replies is depends("subject")))

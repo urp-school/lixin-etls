@@ -14,20 +14,18 @@
         <div class="question_answer text-right">
           <span>${(message.name)!"匿名"}</span>
             <span>${message.updatedAt }</span>
-            <a href="javascript:;">回复</a>
+            <a href="javascript:;">我说一句</a>
+	          <div class="answer_initiator text-right">
+	              <form action="${b.url('!saveReply?id='+message.id)}">
+	                  <div class="publish_con">
+	                      <textarea placeholder="回复${(message.name)!"匿名"}：" name="reply.detail${message.id}"></textarea>
+	                      <button class="btn btn-default" type="submit">发表</button>
+	                  </div>
+	              </form>
+	          </div>
         </div>
         <div class="answer_con">
-        [@listReply message.replies/]
-
-            <div class="answer_initiator text-right">
-                <form action="${b.url('!saveReply?id='+message.id)}">
-                    <a href="javascript:;">我说一句</a>
-                    <div class="publish_con">
-                        <textarea placeholder="回复：" name="reply.detail${message.id}"></textarea>
-                        <button class="btn btn-default" type="submit">发表</button>
-                    </div>
-                </form>
-            </div>
+          [@listReply message.replies/]
         </div>
     </div>
   [/#list]
@@ -130,7 +128,7 @@
 
    <script>
     $(".question_answer > a").click(function(){
-      $(this).parents(".maessage_artical").children(".answer_con").toggle();
+      $(this).siblings(".answer_initiator").children().children(".publish_con").toggle();
     });
     $(".answer_con li .comment_ans > a , .answer_initiator a").click(function(){
       $(this).siblings(".publish_con").toggle();
