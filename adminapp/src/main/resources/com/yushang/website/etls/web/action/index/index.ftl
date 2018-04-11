@@ -22,7 +22,7 @@
                             [/#if]
                             </a>
                             <div class="carousel-caption">
-                                ${course.description }
+                                ${course.description! }
                             </div>
                         </div>
                       [/#list]
