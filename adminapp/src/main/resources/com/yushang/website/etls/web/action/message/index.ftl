@@ -68,6 +68,7 @@
         <div class="massages_con">
           <div class="message_prompt">各位老师在使用智慧教室环境、课程中心等过程中若遇到任何疑问或者有任何建议可在下方留言，我们会尽快回复并解决问题。（留言可选择实名制或匿名。）</div>
           [@message messages/]
+        [#if messages?size>0]
           [#assign pageIndex = messages.pageIndex]
           [#assign totalPages = messages.totalPages]
           [#if pageIndex-2>0]
@@ -104,6 +105,7 @@
                   </ul>
                 </nav>
             </div>
+          [/#if]
 
             <div class="message_question">
               <div class="m_question_title"><i></i>如有问题，快快留言吧</div>

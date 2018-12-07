@@ -56,7 +56,7 @@
                           <div class="form-group">
                             <label for="dainhua" class="col-sm-4 control-label">联系方式:</label>
                             <div class="col-sm-8">
-                              <input type="text" id="tel" class="form-control" disabled="disabled" value="${reservation.tel}">
+                              <input type="text" id="tel" class="form-control" disabled="disabled" value="${reservation.tel!}">
                             </div>
                           </div>
                           <div class="form-group">

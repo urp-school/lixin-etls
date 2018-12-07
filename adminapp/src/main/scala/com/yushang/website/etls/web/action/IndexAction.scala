@@ -33,11 +33,6 @@ class IndexAction extends RestfulAction[Course] {
     put("courses", entityDao.search(OqlBuilder.from(classOf[Course],"course").orderBy("course.id")))
   }
 
-  def contact(): View = {
-    put("resourceTypes", entityDao.getAll(classOf[ResourceType]))
-    forward()
-  }
-
   override def info(id:String):View={
     put("resourceTypes", entityDao.getAll(classOf[ResourceType]))
     super.info(id)

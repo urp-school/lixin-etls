@@ -27,7 +27,7 @@
                 [/#list]
             </div>
         </div>
-
+    [#if resources?size>0]
       [#assign pageIndex = resources.pageIndex]
       [#assign totalPages = resources.totalPages]
       [#if pageIndex-2>0]
@@ -64,6 +64,7 @@
               </ul>
             </nav>
        </div>
+     [/#if]
 
     </div>
 

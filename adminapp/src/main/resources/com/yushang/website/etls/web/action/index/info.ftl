@@ -5,7 +5,7 @@
         <div class="artical_con">
           <div class="artical_title"><span>${course.name}</span><i></i></div>
             <div class="articalt_text">
-              <h4>智慧教室介绍</h4>
+              <h4>${course.name}介绍</h4>
                 <p>
                   ${course.description!}
                 </p>

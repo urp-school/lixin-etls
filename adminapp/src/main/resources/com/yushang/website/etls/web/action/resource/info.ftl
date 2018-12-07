@@ -6,7 +6,7 @@
           <div class="artical_title"><span>${resource.name }</span><i></i></div>
             <div class="articalt_text">
                 <p>
-                ${resource.detail }
+                ${resource.detail !}
                 </p>
             </div>
             <div class="attachment_download">
